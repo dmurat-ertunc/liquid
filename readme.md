@@ -17,3 +17,10 @@ Bu proje, **Angular** ve **Ionic** kullanılarak geliştirilmiş bir hibrit mobi
 - Veriler localStorage'de saklandı.
 - Tasarım için "https://ionicframework.com/docs/api/" sayfası kullanıldı.
 - [(ngModel)] ile çift yönlü veri bağlama teklonojisi kullanıldı.
+
+## Git
+- Projenin Github linki https://github.com/dmurat-ertunc/liquid
+
+## Geliştirlecekler
+- Geçmiş alanı herhangi bir database bağlı olmadığı için daha sonra geliştirilecek.
+- Sıvı gösterilen tüp'e animasyon eklenecek
