@@ -23,4 +23,4 @@ Bu proje, **Angular** ve **Ionic** kullanılarak geliştirilmiş bir hibrit mobi
 
 ## Geliştirlecekler
 - Geçmiş alanı herhangi bir database bağlı olmadığı için daha sonra geliştirilecek.
-- Sıvı gösterilen tüp'e animasyon eklenecek
+- Sıvı gösterilen tüp'e daha iyi animasyon eklenebilir

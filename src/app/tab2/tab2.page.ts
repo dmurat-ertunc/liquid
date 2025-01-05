@@ -14,9 +14,9 @@ import { fromEvent, Subscription } from 'rxjs';
 export class Tab2Page {
 
   constructor() {
-    this.entryLiquid = Number(localStorage.getItem("entryLiquid"));
-    this.exitLiquid = Number(localStorage.getItem("exitLiquid"));
+
   }
+
   public buttonClickSubscription: Subscription | null = null;
   public entryLiquid: number = 0;
   public exitLiquid: number = 0;
@@ -41,25 +41,28 @@ export class Tab2Page {
     .subscribe((event: Event) => {
       const target = event.target as HTMLElement;
       if (target.tagName === 'ION-BUTTON' || target.tagName === 'BUTTON') {
-        window.location.reload();
-      }
+        this.entryLiquid = Number(localStorage.getItem("entryLiquid"));
+        this.exitLiquid = Number(localStorage.getItem("exitLiquid"));      }
     });
   } 
 
   cleanLiquid(){
     localStorage.setItem("entryLiquid","0")
     localStorage.setItem("exitLiquid","0")
-    window.location.reload()
+    this.bar1Value = 0;
+    this.bar2Value = 0;
   }
 
   addLiquid(amount: number){
     this.entryLiquid += amount;
+    this.bar1Value = this.entryLiquid
     localStorage.setItem("entryLiquid",this.entryLiquid.toString())
     this.inputValue1 = 0;
     this.inputValue2 = 0;
   }
   removeLiquid(amount: number){
     this.exitLiquid += amount;
+    this.bar2Value = this.exitLiquid
     localStorage.setItem("exitLiquid",this.exitLiquid.toString())
     this.inputValue1 = 0;
     this.inputValue2 = 0;
