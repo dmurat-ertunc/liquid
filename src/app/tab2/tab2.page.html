@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Su Dengesi
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -12,6 +12,105 @@
       <ion-title size="large">Tab 2</ion-title>
     </ion-toolbar>
   </ion-header>
+      <br>
+      <div class="button-container">
+        <ion-button color="light" (click)="cleanLiquid()" expand="block">Temizle</ion-button>
+        <ion-button color="light" expand="block">Geçmiş</ion-button>
+      </div>
+      <br>
+      <br>
+      <div>
+        <div class="thermometer-wrapper">
+          <div class="bar-container">
+            <div class="bar-wrapper">
+              <div class="bar-title">Alınan Sıvı (ml)</div>
+              <div class="bar">
+                <div class="fill" [style.height.%]="bar1Fill / 10">
+                  <div class="level-text">{{ bar1Value }}</div>
+                </div>
+                <div class="ruler">
+                  <div *ngFor="let num of scaleNumbers" class="ruler-mark">
+                    <div class="line"></div>
+                    <div class="label">{{ num }}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+            <div class="bar-wrapper">
+              <div class="bar-title">Çıkan Sıvı (ml)</div>
+              <div class="bar">
+                <div class="fill" [style.height.%]="bar2Fill / 10">
+                  <div class="level-text">{{ bar2Value }}</div>
+                </div>
+                <div class="ruler">
+                  <div *ngFor="let num of scaleNumbers" class="ruler-mark">
+                    <div class="line"></div>
+                    <div class="label">{{ num }}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        <div class="quick-entry-container">
+          <ion-card id="card1">
+            <ion-card-content>
+              <p>Bir Bardak Su</p>
+              <ion-icon name="water-outline" size="large"></ion-icon>
+              <ion-button color="light" (click)="addLiquid(200)">+200</ion-button>
+            </ion-card-content>
+          </ion-card>
+      
+          <ion-card id="card2">
+            <ion-card-content>
+              <p>Bir Fincan Çay</p>
+              <ion-icon name="cafe-outline" size="large"></ion-icon>
+              <ion-button color="light" (click)="addLiquid(100)">+100</ion-button>
+            </ion-card-content>
+          </ion-card>
+      
+          <ion-card id="card3">
+            <ion-card-content>
+              <p>Çorba</p>
+              <ion-icon name="restaurant-outline" size="large"></ion-icon>
+              <ion-button color="light" (click)="addLiquid(150)">+150</ion-button>
+            </ion-card-content>
+          </ion-card>
+      
+          <ion-card id="card4">
+            <ion-card-content>
+              <p>Sulu Yemek</p>
+              <ion-icon name="fast-food-outline" size="large"></ion-icon>
+              <ion-button color="light"(click)="addLiquid(70)">+70</ion-button>
+            </ion-card-content>
+          </ion-card>
+        </div>
+      </div>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+      <div class="fluid-balance-container">
+        <ion-card>
+          <ion-card-content>
+            <p>Alınan Sıvı (ml)</p>
+            <ion-item>
+              <ion-input type="number" placeholder="Giren Sıvı" [(ngModel)]="inputValue1"></ion-input>
+            </ion-item>
+            <ion-button color="primary" expand="block" (click)="addLiquid(inputValue1)">EKLE</ion-button>
+          </ion-card-content>
+        </ion-card>
+    
+        <ion-card>
+          <ion-card-content>
+            <p>Çıkan Sıvı (ml)</p>
+            <ion-item>
+              <ion-input type="number" placeholder="Çıkan Sıvı" [(ngModel)]="inputValue2" value=""></ion-input>
+            </ion-item>
+            <ion-button  color="danger" expand="block" (click)="removeLiquid(inputValue2)">EKLE</ion-button>
+          </ion-card-content>
+        </ion-card>
+      </div>
+  
+
+  <!-- <app-explore-container name="Tab 2 page"></app-explore-container> -->
 </ion-content>
